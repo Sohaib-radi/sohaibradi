@@ -50,7 +50,7 @@ function CvPage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 px-4 py-2 bg-white rounded-lg border border-zinc-200 shadow-sm hover:shadow-md transition-shadow"
               >
-                <img src="/src/assets/GitHub_Logo.svg" alt="GitHub" className="size-8" />
+                <img src="/GitHub_Logo.svg" alt="GitHub" className="size-8" />
                 <span className="text-sm font-semibold text-zinc-700">{t.cv.github}</span>
               </a>
               <a
@@ -59,7 +59,7 @@ function CvPage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 px-4 py-2 bg-white rounded-lg border border-zinc-200 shadow-sm hover:shadow-md transition-shadow"
               >
-                <img src="/src/assets/Upwork-Logo.svg" alt="Upwork" className="size-8" />
+                <img src="/Upwork-Logo.svg" alt="Upwork" className="size-8" />
                 <span className="text-sm font-semibold text-zinc-700">{t.cv.upwork}</span>
               </a>
             </div>

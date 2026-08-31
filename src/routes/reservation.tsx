@@ -17,8 +17,6 @@ import { Label } from "@/components/ui/label";
 import { submitContactForm } from "@/lib/contact-form";
 import { toast } from "sonner";
 import { Mail } from "lucide-react";
-import GitHubLogo from "@/assets/GitHub_Logo.svg";
-import UpworkLogo from "@/assets/Upwork-Logo.svg";
 
 export const Route = createFileRoute("/reservation")({
   component: ReservationPage,
@@ -168,11 +166,11 @@ function ReservationPage() {
             {/* Social */}
             <div className="flex justify-center gap-6 pt-4 border-t border-zinc-100">
                 <a href="https://www.upwork.com/freelancers/~01c146d19986ff58ec?mp_source=share" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                  <img src={UpworkLogo} alt="Upwork" className="size-6" />
+                  <img src="/Upwork-Logo.svg" alt="Upwork" className="size-6" />
                   <span className="text-sm font-medium">Upwork</span>
                 </a>
                 <a href="https://github.com/Sohaib-radi" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                  <img src={GitHubLogo} alt="GitHub" className="size-6" />
+                  <img src="/GitHub_Logo.svg" alt="GitHub" className="size-6" />
                   <span className="text-sm font-medium">GitHub</span>
                 </a>
             </div>

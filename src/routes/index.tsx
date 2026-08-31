@@ -98,7 +98,7 @@ function Index() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-3 px-4 py-2 bg-white rounded-lg border border-zinc-200 shadow-sm hover:shadow-md transition-shadow"
                 >
-                  <img src="/src/assets/Upwork-Logo.svg" alt="Upwork" className="h-5" />
+                  <img src="/Upwork-Logo.svg" alt="Upwork" className="h-5" />
                   <span className="flex items-center gap-1 text-sm font-semibold text-zinc-700">
                     <span className="text-yellow-500">★★★★★</span>
                     <span>{t.home.upworkRating}</span>
