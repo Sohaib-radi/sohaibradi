@@ -79,14 +79,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Sohaib Radi — Full Stack & AI Developer" },
+      { name: "description", content: "Building AI-powered SaaS platforms and multi-agent systems." },
+      { name: "author", content: "Sohaib Radi" },
+      { property: "og:title", content: "Sohaib Radi — Full Stack & AI Developer" },
+      { property: "og:description", content: "Building AI-powered SaaS platforms and multi-agent systems." },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: "/favicon/android-chrome-512x512.png" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
