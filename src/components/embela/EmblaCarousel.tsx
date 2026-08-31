@@ -1,53 +1,42 @@
-import React, { useCallback, useEffect, useState } from 'react'
-import { EmblaCarouselType, EmblaOptionsType } from 'embla-carousel'
-import useEmblaCarousel from 'embla-carousel-react'
-import { LazyLoadImage } from './EmblaCarouselLazyLoadImage'
-import {
-  NextButton,
-  PrevButton,
-  usePrevNextButtons
-} from './EmblaCarouselArrowButtons'
-import { DotButton, useDotButton } from './EmblaCarouselDotButton'
+import React, { useCallback, useEffect, useState } from "react";
+import { EmblaCarouselType, EmblaOptionsType } from "embla-carousel";
+import useEmblaCarousel from "embla-carousel-react";
+import { LazyLoadImage } from "./EmblaCarouselLazyLoadImage";
+import { NextButton, PrevButton, usePrevNextButtons } from "./EmblaCarouselArrowButtons";
+import { DotButton, useDotButton } from "./EmblaCarouselDotButton";
 
 type PropType = {
-  slides: (string | number)[]
-  options?: EmblaOptionsType
-}
+  slides: (string | number)[];
+  options?: EmblaOptionsType;
+};
 
 const EmblaCarousel = (props: PropType) => {
-  const { slides, options } = props
-  const [emblaRed, emblaApi] = useEmblaCarousel(options)
-  const [slidesInView, setSlidesInView] = useState<number[]>([])
+  const { slides, options } = props;
+  const [emblaRed, emblaApi] = useEmblaCarousel(options);
+  const [slidesInView, setSlidesInView] = useState<number[]>([]);
 
-  const { selectedIndex, scrollSnaps, onDotButtonClick } =
-    useDotButton(emblaApi)
+  const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(emblaApi);
 
-  const {
-    prevBtnDisabled,
-    nextBtnDisabled,
-    onPrevButtonClick,
-    onNextButtonClick
-  } = usePrevNextButtons(emblaApi)
+  const { prevBtnDisabled, nextBtnDisabled, onPrevButtonClick, onNextButtonClick } =
+    usePrevNextButtons(emblaApi);
 
   const updateSlidesInView = useCallback((emblaApi: EmblaCarouselType) => {
     setSlidesInView((slidesInView) => {
       if (slidesInView.length === emblaApi.slideNodes().length) {
-        emblaApi.off('slidesInView', updateSlidesInView)
+        emblaApi.off("slidesInView", updateSlidesInView);
       }
-      const inView = emblaApi
-        .slidesInView()
-        .filter((index) => !slidesInView.includes(index))
-      return slidesInView.concat(inView)
-    })
-  }, [])
+      const inView = emblaApi.slidesInView().filter((index) => !slidesInView.includes(index));
+      return slidesInView.concat(inView);
+    });
+  }, []);
 
   useEffect(() => {
-    if (!emblaApi) return
+    if (!emblaApi) return;
 
-    updateSlidesInView(emblaApi)
-    emblaApi.on('slidesInView', updateSlidesInView)
-    emblaApi.on('reInit', updateSlidesInView)
-  }, [emblaApi, updateSlidesInView])
+    updateSlidesInView(emblaApi);
+    emblaApi.on("slidesInView", updateSlidesInView);
+    emblaApi.on("reInit", updateSlidesInView);
+  }, [emblaApi, updateSlidesInView]);
 
   return (
     <div className="embla">
@@ -57,7 +46,9 @@ const EmblaCarousel = (props: PropType) => {
             <LazyLoadImage
               key={index}
               index={index}
-              imgSrc={typeof slide === 'string' ? slide : `https://picsum.photos/600/350?v=${slide}`}
+              imgSrc={
+                typeof slide === "string" ? slide : `https://picsum.photos/600/350?v=${slide}`
+              }
               inView={slidesInView.indexOf(index) > -1}
             />
           ))}
@@ -75,15 +66,15 @@ const EmblaCarousel = (props: PropType) => {
             <DotButton
               key={index}
               onClick={() => onDotButtonClick(index)}
-              className={'embla__dot'.concat(
-                index === selectedIndex ? ' embla__dot--selected' : ''
+              className={"embla__dot".concat(
+                index === selectedIndex ? " embla__dot--selected" : "",
               )}
             />
           ))}
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default EmblaCarousel
+export default EmblaCarousel;

@@ -1,4 +1,5 @@
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzOLGQuxcWj1ETn1H8EdQ5U2pZ3l937v-5NNlmFlqVt71jhBU5-HfLMA7tEy49nKEnG5Q/exec";
+const SCRIPT_URL =
+  "https://script.google.com/macros/s/AKfycbzOLGQuxcWj1ETn1H8EdQ5U2pZ3l937v-5NNlmFlqVt71jhBU5-HfLMA7tEy49nKEnG5Q/exec";
 
 export async function submitContactForm(formData: {
   name: string;

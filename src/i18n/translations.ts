@@ -31,7 +31,7 @@ const fr = {
       desc: "Écrivez-moi pour un projet, une formation ou une consultation technique.",
     },
     reservation: {
-      title: "Réserver une séance — Sohaib Radi",
+      title: "Me contacter — Sohaib Radi",
       desc: "Choisissez une date et un créneau pour un appel de découverte ou une consultation.",
     },
   },
@@ -40,7 +40,7 @@ const fr = {
     formations: "Mes Formations",
     cv: "Mon CV",
     contact: "Contact",
-    cta: "Réserver une séance",
+    cta: "Me contacter",
   },
   footer: {
     rights: "Développeur Full Stack & Systèmes multi-agents.",
@@ -77,14 +77,30 @@ const fr = {
     architecture: {
       badge: "PLATFORME PHARE",
       title: "CerebralCrew | Plateforme d'opérations d'entreprise nativement IA",
-      description: "Le système d'exploitation autonome pour les entreprises multi-sites, connectant une architecture multi-tenant à des équipes d'agents IA collaboratifs.",
+      description:
+        "Le système d'exploitation autonome pour les entreprises multi-sites, connectant une architecture multi-tenant à des équipes d'agents IA collaboratifs.",
       cards: [
-        { title: "Architecture Multi-Tenant & Multi-Entity", body: "Conçue pour supporter des structures multi-entreprises, des environnements multi-magasins, et plus de 20 modules centraux avec des schémas d'attributs de produits personnalisables et agnostiques par industrie." },
-        { title: "Contrôle d'accès basé sur les rôles (RBAC)", body: "Système de permission granulaire régissant les utilisateurs humains et les capacités des agents IA à travers les départements." },
-        { title: "Création d'agents basés sur l'organigramme (Org-Chart Agent Creation)", body: "Permet aux administrateurs de générer et configurer des agents IA dynamiquement basés sur les hiérarchies internes de l'entreprise." },
-        { title: "Compagnons IA pour les employés (Employee AI Companions)", body: "Agents personnels dédiés pour chaque membre de l'équipe qui s'adaptent continuellement aux flux de travail individuels et aux données opérationnelles." },
-        { title: "Intégration Omnicanale & Entreprise", body: "Interfaces de messagerie directe via WhatsApp et Telegram, couplées à des intégrations backend pour Slack, HubSpot et l'extraction automatisée de données de factures." }
-      ]
+        {
+          title: "Architecture Multi-Tenant & Multi-Entity",
+          body: "Conçue pour supporter des structures multi-entreprises, des environnements multi-magasins, et plus de 20 modules centraux avec des schémas d'attributs de produits personnalisables et agnostiques par industrie.",
+        },
+        {
+          title: "Contrôle d'accès basé sur les rôles (RBAC)",
+          body: "Système de permission granulaire régissant les utilisateurs humains et les capacités des agents IA à travers les départements.",
+        },
+        {
+          title: "Création d'agents basés sur l'organigramme (Org-Chart Agent Creation)",
+          body: "Permet aux administrateurs de générer et configurer des agents IA dynamiquement basés sur les hiérarchies internes de l'entreprise.",
+        },
+        {
+          title: "Compagnons IA pour les employés (Employee AI Companions)",
+          body: "Agents personnels dédiés pour chaque membre de l'équipe qui s'adaptent continuellement aux flux de travail individuels et aux données opérationnelles.",
+        },
+        {
+          title: "Intégration Omnicanale & Entreprise",
+          body: "Interfaces de messagerie directe via WhatsApp et Telegram, couplées à des intégrations backend pour Slack, HubSpot et l'extraction automatisée de données de factures.",
+        },
+      ],
     },
     approachTitle: "Une méthode simple : cadrer, livrer vite, itérer.",
     approachBody:
@@ -96,11 +112,21 @@ const fr = {
     ],
     imageAlt: "Espace de travail moderne d'un développeur logiciel",
     formationsLabel: "Mes formations",
-    formationsTitle: "Trois parcours intensifs pour devenir développeur ou concevoir vos propres agents IA.",
+    formationsTitle:
+      "Trois parcours intensifs pour devenir développeur ou concevoir vos propres agents IA.",
     formationsTeasers: [
-      { t: "Devenir Full Stack Developer", d: "12 semaines — JavaScript, React, Node.js, PostgreSQL et déploiement." },
-      { t: "Web App Professionnelle", d: "6 semaines — Architecture front moderne, API REST, auth et tests." },
-      { t: "Développeur Multi-Agents", d: "8 semaines — CrewAI, LLMs, outils, RAG et mise en production." },
+      {
+        t: "Devenir Full Stack Developer",
+        d: "12 semaines — JavaScript, React, Node.js, PostgreSQL et déploiement.",
+      },
+      {
+        t: "Web App Professionnelle",
+        d: "6 semaines — Architecture front moderne, API REST, auth et tests.",
+      },
+      {
+        t: "Développeur Multi-Agents",
+        d: "8 semaines — CrewAI, LLMs, outils, RAG et mise en production.",
+      },
     ],
     formationsLink: "Voir le détail des programmes",
     ctaTitle: "Un projet, une idée, un process à automatiser ?",
@@ -109,10 +135,16 @@ const fr = {
     ctaButton: "Réserver une séance",
     upworkRating: "Note de 5.0 sur Upwork",
     projects: [
-      { title: "CerebralCrew", url: "https://cerebralcrew.com", desc: "Plateforme d'opérations IA pour entreprises.", images: ["/src/assets/cerebralcrew/1.png"] }
+      {
+        title: "CerebralCrew",
+        url: "https://cerebralcrew.com",
+        desc: "Plateforme d'opérations IA pour entreprises.",
+        images: ["/src/assets/cerebralcrew/1.png"],
+      },
     ],
   },
-  services: {    badge: "Mes services",
+  services: {
+    badge: "Mes services",
     h1: "Du code, des agents, et des produits qui partent en production.",
     lead: "Six prestations complémentaires, facturées au forfait ou en régie. Chaque mission commence par un appel de cadrage gratuit et se termine par une livraison documentée.",
     items: [
@@ -120,41 +152,66 @@ const fr = {
         title: "Développement Mobile",
         price: "Sur devis après appel",
         body: "Applications iOS et Android performantes en React Native / Expo : authentification, notifications push, paiements et mode hors-ligne.",
-        points: ["Une base de code, deux stores", "Design system et animations soignées", "Publication App Store & Play Store incluse"],
+        points: [
+          "Une base de code, deux stores",
+          "Design system et animations soignées",
+          "Publication App Store & Play Store incluse",
+        ],
       },
       {
         title: "Développement Web App",
         price: "Sur devis après appel",
         body: "Applications web métier rapides et sécurisées : back-office, portails clients, dashboards temps réel et intégrations API.",
-        points: ["Django / Python, React, TypeScript, PostgreSQL", "Rôles, permissions et audit", "Tests automatisés et CI/CD"],
+        points: [
+          "Django / Python, React, TypeScript, PostgreSQL",
+          "Rôles, permissions et audit",
+          "Tests automatisés et CI/CD",
+        ],
       },
       {
         title: "SaaS — de l'idée au produit",
         price: "Forfait projet sur devis",
         body: "Je vous accompagne du cadrage au lancement : MVP, abonnements, multi-tenant, analytics et boucle de feedback utilisateur.",
-        points: ["Atelier de cadrage et roadmap", "MVP livré en 6 à 10 semaines", "Facturation récurrente Stripe / Paddle"],
+        points: [
+          "Atelier de cadrage et roadmap",
+          "MVP livré en 6 à 10 semaines",
+          "Facturation récurrente Stripe / Paddle",
+        ],
       },
       {
         title: "Systèmes Multi-Agents (CrewAI)",
         price: "Sur devis après appel",
         body: "Des équipes d'agents autonomes qui exécutent vos processus : veille marché, qualification de leads, génération de rapports, support niveau 1.",
-        points: ["Architecture agents, outils et mémoire", "RAG sur vos documents internes", "Observabilité, garde-fous et coûts maîtrisés"],
+        points: [
+          "Architecture agents, outils et mémoire",
+          "RAG sur vos documents internes",
+          "Observabilité, garde-fous et coûts maîtrisés",
+        ],
       },
       {
         title: "Bots & Agents Telegram / WhatsApp",
         price: "Sur devis après appel",
         body: "Assistants conversationnels branchés sur vos données : prise de commande, réservation, support client et notifications automatiques.",
-        points: ["WhatsApp Business API & Telegram Bot API", "Connexion CRM, Sheets ou base de données", "Réponses IA contextuelles multilingues (FR / AR / EN)"],
+        points: [
+          "WhatsApp Business API & Telegram Bot API",
+          "Connexion CRM, Sheets ou base de données",
+          "Réponses IA contextuelles multilingues (FR / AR / EN)",
+        ],
       },
       {
         title: "Consultation & Accompagnement",
         price: "Sur devis après appel",
         body: "Audit technique, choix d'architecture, revue de code ou stratégie IA. Idéal pour débloquer une équipe ou sécuriser une décision.",
-        points: ["Audit d'architecture et de dette technique", "Cadrage de votre stratégie IA", "Mentorat d'équipe et revue de code"],
+        points: [
+          "Audit d'architecture et de dette technique",
+          "Cadrage de votre stratégie IA",
+          "Mentorat d'équipe et revue de code",
+        ],
       },
     ],
     ctaTitle: "Parlons de votre projet cette semaine.",
-    ctaBody: "30 minutes suffisent pour évaluer la faisabilité, le budget et le calendrier de votre idée.",
+    ctaBody:
+      "30 minutes suffisent pour évaluer la faisabilité, le budget et le calendrier de votre idée.",
     ctaButton: "Réserver une séance",
   },
   formations: {
@@ -265,16 +322,48 @@ const fr = {
     ],
     skillsTitle: "Compétences Techniques",
     skills: [
-      { group: "Backend", items: ["Python", "Django", "Django REST Framework", "PostgreSQL", "Conception de Bases de Données", "Architecture Système"] },
-      { group: "Frontend & Mobile", items: ["Next.js", "React", "TypeScript", "React Native", "Flutter", "Tailwind CSS"] },
-      { group: "IA & Systèmes Multi-Agents", items: ["CrewAI (Flux de travail multi-agents)", "Orchestration LLM", "Pipelines d'agents autonomes"] },
-      { group: "Intégrations d'entreprise", items: ["Salesforce", "HubSpot", "Odoo", "Slack", "Telegram", "WhatsApp API"] },
+      {
+        group: "Backend",
+        items: [
+          "Python",
+          "Django",
+          "Django REST Framework",
+          "PostgreSQL",
+          "Conception de Bases de Données",
+          "Architecture Système",
+        ],
+      },
+      {
+        group: "Frontend & Mobile",
+        items: ["Next.js", "React", "TypeScript", "React Native", "Flutter", "Tailwind CSS"],
+      },
+      {
+        group: "IA & Systèmes Multi-Agents",
+        items: [
+          "CrewAI (Flux de travail multi-agents)",
+          "Orchestration LLM",
+          "Pipelines d'agents autonomes",
+        ],
+      },
+      {
+        group: "Intégrations d'entreprise",
+        items: ["Salesforce", "HubSpot", "Odoo", "Slack", "Telegram", "WhatsApp API"],
+      },
     ],
     projectsTitle: "Projets marquants",
     projects: [
-      { name: "AgentDesk", desc: "Plateforme de support client pilotée par une crew d'agents CrewAI : triage, réponse et escalade automatiques." },
-      { name: "Souk Analytics", desc: "SaaS d'analyse de prix e-commerce au Maroc, agents de scraping et rapports quotidiens automatisés." },
-      { name: "Rendez-vous Bot", desc: "Bot WhatsApp de prise de rendez-vous pour cliniques, synchronisé avec Google Calendar, FR/AR." },
+      {
+        name: "AgentDesk",
+        desc: "Plateforme de support client pilotée par une crew d'agents CrewAI : triage, réponse et escalade automatiques.",
+      },
+      {
+        name: "Souk Analytics",
+        desc: "SaaS d'analyse de prix e-commerce au Maroc, agents de scraping et rapports quotidiens automatisés.",
+      },
+      {
+        name: "Rendez-vous Bot",
+        desc: "Bot WhatsApp de prise de rendez-vous pour cliniques, synchronisé avec Google Calendar, FR/AR.",
+      },
     ],
     educationTitle: "Formation & Langues",
     educationLabel: "Formation",
@@ -326,7 +415,8 @@ const fr = {
     timezone: "Fuseau horaire : Casablanca (GMT+1)",
     confirm: "Confirmer la réservation",
     missing: "Merci de choisir une date et un créneau.",
-    success: "Votre demande de réservation est prête dans votre messagerie. Envoyez-la et je confirme sous 24 h.",
+    success:
+      "Votre demande de réservation est prête dans votre messagerie. Envoyez-la et je confirme sous 24 h.",
     prev: "Mois précédent",
     next: "Mois suivant",
     weekdays: ["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"],
@@ -348,12 +438,33 @@ const en: Dict = {
       title: "My Trainings — Full Stack, Web App & Multi-Agents | Sohaib Radi",
       desc: "Three intensive programs, small groups, 100% real projects.",
     },
-    cv: { title: "My Resume — Sohaib Radi, Full Stack & AI Developer", desc: "Background, experience, projects and skills of Sohaib Radi." },
-    contact: { title: "Contact — Sohaib Radi", desc: "Write to me about a project, a training or a technical consultation." },
-    reservation: { title: "Book a session — Sohaib Radi", desc: "Pick a date and a time slot for a discovery call or a consultation." },
+    cv: {
+      title: "My Resume — Sohaib Radi, Full Stack & AI Developer",
+      desc: "Background, experience, projects and skills of Sohaib Radi.",
+    },
+    contact: {
+      title: "Contact — Sohaib Radi",
+      desc: "Write to me about a project, a training or a technical consultation.",
+    },
+    reservation: {
+      title: "Contact me — Sohaib Radi",
+      desc: "Pick a date and a time slot for a discovery call or a consultation.",
+    },
   },
-  nav: { services: "My Services", formations: "My Trainings", cv: "My Resume", contact: "Contact", cta: "Book a session" },
-  footer: { rights: "Full Stack Developer & Multi-Agent Systems.", services: "Services", formations: "Trainings", cv: "Resume", contact: "Contact" },
+  nav: {
+    services: "My Services",
+    formations: "My Trainings",
+    cv: "My Resume",
+    contact: "Contact",
+    cta: "Contact me",
+  },
+  footer: {
+    rights: "Full Stack Developer & Multi-Agent Systems.",
+    services: "Services",
+    formations: "Trainings",
+    cv: "Resume",
+    contact: "Contact",
+  },
   home: {
     badge1: "Available",
     badge2: "Freelance projects & trainings",
@@ -362,22 +473,50 @@ const en: Dict = {
     ctaPrimary: "Explore my services",
     ctaSecondary: "View my resume",
     highlights: [
-      { title: "End-to-end SaaS products", body: "From the scoping workshop to production: architecture, database, payments and dashboards." },
-      { title: "Web Applications", body: "Custom solutions: e-commerce platforms, CRMs, education platforms, and Content Management Systems (CMS)." },
-      { title: "Mobile App Development", body: "Native-like mobile experiences designed for performance and user engagement." },
-      { title: "Programming Courses", body: "Master Python & Django, Next.js, and system design through hands-on, real-world project training." },
+      {
+        title: "End-to-end SaaS products",
+        body: "From the scoping workshop to production: architecture, database, payments and dashboards.",
+      },
+      {
+        title: "Web Applications",
+        body: "Custom solutions: e-commerce platforms, CRMs, education platforms, and Content Management Systems (CMS).",
+      },
+      {
+        title: "Mobile App Development",
+        body: "Native-like mobile experiences designed for performance and user engagement.",
+      },
+      {
+        title: "Programming Courses",
+        body: "Master Python & Django, Next.js, and system design through hands-on, real-world project training.",
+      },
     ],
     architecture: {
       badge: "FLAGSHIP PLATFORM",
       title: "CerebralCrew | AI-Native Enterprise Operations Platform",
-      description: "The autonomous operating system for multi-location businesses, connecting multi-tenant architecture with collaborative AI agent teams.",
+      description:
+        "The autonomous operating system for multi-location businesses, connecting multi-tenant architecture with collaborative AI agent teams.",
       cards: [
-        { title: "Multi-Tenant & Multi-Entity Architecture", body: "Engineered to support multi-company structures, multi-store environments, and 20+ core modules with customizable, industry-agnostic product attribute schemas." },
-        { title: "Role-Based Access Control (RBAC)", body: "Fine-grained permission system governing human users and AI agent capabilities across departments." },
-        { title: "Org-Chart Agent Creation", body: "Allows administrators to spawn and configure AI agents dynamically based on internal company hierarchies." },
-        { title: "Employee AI Companions", body: "Dedicated personal agents for each team member that continuously adapt to individual workflows and operational data." },
-        { title: "Omnichannel & Enterprise Integration", body: "Direct messaging interfaces via WhatsApp and Telegram, paired with backend integrations for Slack, HubSpot, and automated invoice data extraction." }
-      ]
+        {
+          title: "Multi-Tenant & Multi-Entity Architecture",
+          body: "Engineered to support multi-company structures, multi-store environments, and 20+ core modules with customizable, industry-agnostic product attribute schemas.",
+        },
+        {
+          title: "Role-Based Access Control (RBAC)",
+          body: "Fine-grained permission system governing human users and AI agent capabilities across departments.",
+        },
+        {
+          title: "Org-Chart Agent Creation",
+          body: "Allows administrators to spawn and configure AI agents dynamically based on internal company hierarchies.",
+        },
+        {
+          title: "Employee AI Companions",
+          body: "Dedicated personal agents for each team member that continuously adapt to individual workflows and operational data.",
+        },
+        {
+          title: "Omnichannel & Enterprise Integration",
+          body: "Direct messaging interfaces via WhatsApp and Telegram, paired with backend integrations for Slack, HubSpot, and automated invoice data extraction.",
+        },
+      ],
     },
     approachTitle: "A simple method: scope it, ship fast, iterate.",
     approachBody:
@@ -391,17 +530,32 @@ const en: Dict = {
     formationsLabel: "My trainings",
     formationsTitle: "Three intensive tracks to become a developer or design your own AI agents.",
     formationsTeasers: [
-      { t: "Become a Full Stack Developer", d: "12 weeks — JavaScript, React, Node.js, PostgreSQL and deployment." },
-      { t: "Professional Web App", d: "6 weeks — Modern front-end architecture, REST APIs, auth and testing." },
-      { t: "Multi-Agent Developer", d: "8 weeks — CrewAI, LLMs, tools, RAG and production rollout." },
+      {
+        t: "Become a Full Stack Developer",
+        d: "12 weeks — JavaScript, React, Node.js, PostgreSQL and deployment.",
+      },
+      {
+        t: "Professional Web App",
+        d: "6 weeks — Modern front-end architecture, REST APIs, auth and testing.",
+      },
+      {
+        t: "Multi-Agent Developer",
+        d: "8 weeks — CrewAI, LLMs, tools, RAG and production rollout.",
+      },
     ],
     formationsLink: "See the full curricula",
     ctaTitle: "A project, an idea, a process to automate?",
-    ctaBody: "Book a 30-minute discovery call. We clarify your need together and I hand you a concrete roadmap.",
+    ctaBody:
+      "Book a 30-minute discovery call. We clarify your need together and I hand you a concrete roadmap.",
     ctaButton: "Book a session",
     upworkRating: "5.0 rating on Upwork",
     projects: [
-      { title: "CerebralCrew", url: "https://cerebralcrew.com", desc: "AI operations platform for businesses.", images: ["/src/assets/cerebralcrew/1.png"] }
+      {
+        title: "CerebralCrew",
+        url: "https://cerebralcrew.com",
+        desc: "AI operations platform for businesses.",
+        images: ["/src/assets/cerebralcrew/1.png"],
+      },
     ],
   },
   services: {
@@ -413,37 +567,61 @@ const en: Dict = {
         title: "Mobile Development",
         price: "Quote after discovery call",
         body: "High-performance iOS and Android apps with React Native / Expo: authentication, push notifications, payments and offline mode.",
-        points: ["One codebase, two stores", "Design system and polished animations", "App Store & Play Store publishing included"],
+        points: [
+          "One codebase, two stores",
+          "Design system and polished animations",
+          "App Store & Play Store publishing included",
+        ],
       },
       {
         title: "Web App Development",
         price: "Quote after discovery call",
         body: "Fast, secure business web apps: back-offices, client portals, real-time dashboards and API integrations.",
-        points: ["Django / Python, React, TypeScript, PostgreSQL", "Roles, permissions and audit trail", "Automated tests and CI/CD"],
+        points: [
+          "Django / Python, React, TypeScript, PostgreSQL",
+          "Roles, permissions and audit trail",
+          "Automated tests and CI/CD",
+        ],
       },
       {
         title: "SaaS — from idea to product",
         price: "Fixed project quote",
         body: "I guide you from scoping to launch: MVP, subscriptions, multi-tenancy, analytics and a user feedback loop.",
-        points: ["Scoping workshop and roadmap", "MVP delivered in 6 to 10 weeks", "Recurring billing with Stripe / Paddle"],
+        points: [
+          "Scoping workshop and roadmap",
+          "MVP delivered in 6 to 10 weeks",
+          "Recurring billing with Stripe / Paddle",
+        ],
       },
       {
         title: "Multi-Agent Systems (CrewAI)",
         price: "Quote after discovery call",
         body: "Teams of autonomous agents running your processes: market watch, lead qualification, report generation, tier-1 support.",
-        points: ["Agent, tool and memory architecture", "RAG over your internal documents", "Observability, guardrails and cost control"],
+        points: [
+          "Agent, tool and memory architecture",
+          "RAG over your internal documents",
+          "Observability, guardrails and cost control",
+        ],
       },
       {
         title: "Telegram / WhatsApp Bots & Agents",
         price: "Quote after discovery call",
         body: "Conversational assistants plugged into your data: order taking, booking, customer support and automatic notifications.",
-        points: ["WhatsApp Business API & Telegram Bot API", "CRM, Sheets or database connection", "Multilingual contextual AI replies (FR / AR / EN)"],
+        points: [
+          "WhatsApp Business API & Telegram Bot API",
+          "CRM, Sheets or database connection",
+          "Multilingual contextual AI replies (FR / AR / EN)",
+        ],
       },
       {
         title: "Consulting & Coaching",
         price: "Quote after discovery call",
         body: "Technical audit, architecture decisions, code review or AI strategy. Ideal to unblock a team or de-risk a decision.",
-        points: ["Architecture and technical debt audit", "AI strategy framing", "Team mentoring and code review"],
+        points: [
+          "Architecture and technical debt audit",
+          "AI strategy framing",
+          "Team mentoring and code review",
+        ],
       },
     ],
     ctaTitle: "Let's talk about your project this week.",
@@ -558,16 +736,48 @@ const en: Dict = {
     ],
     skillsTitle: "Core Technical Skills",
     skills: [
-      { group: "Backend", items: ["Python", "Django", "Django REST Framework", "PostgreSQL", "Database Design", "System Architecture"] },
-      { group: "Frontend & Mobile", items: ["Next.js", "React", "TypeScript", "React Native", "Flutter", "Tailwind CSS"] },
-      { group: "AI & Agentic Systems", items: ["CrewAI (Multi-Agent Workflows)", "LLM Orchestration", "Autonomous Agent Pipelines"] },
-      { group: "Enterprise Integrations", items: ["Salesforce", "HubSpot", "Odoo", "Slack", "Telegram", "WhatsApp API"] },
+      {
+        group: "Backend",
+        items: [
+          "Python",
+          "Django",
+          "Django REST Framework",
+          "PostgreSQL",
+          "Database Design",
+          "System Architecture",
+        ],
+      },
+      {
+        group: "Frontend & Mobile",
+        items: ["Next.js", "React", "TypeScript", "React Native", "Flutter", "Tailwind CSS"],
+      },
+      {
+        group: "AI & Agentic Systems",
+        items: [
+          "CrewAI (Multi-Agent Workflows)",
+          "LLM Orchestration",
+          "Autonomous Agent Pipelines",
+        ],
+      },
+      {
+        group: "Enterprise Integrations",
+        items: ["Salesforce", "HubSpot", "Odoo", "Slack", "Telegram", "WhatsApp API"],
+      },
     ],
     projectsTitle: "Selected projects",
     projects: [
-      { name: "AgentDesk", desc: "Customer support platform driven by a CrewAI crew: automatic triage, replies and escalation." },
-      { name: "Souk Analytics", desc: "E-commerce price intelligence SaaS for Morocco, scraping agents and automated daily reports." },
-      { name: "Rendez-vous Bot", desc: "WhatsApp appointment bot for clinics, synced with Google Calendar, FR/AR." },
+      {
+        name: "AgentDesk",
+        desc: "Customer support platform driven by a CrewAI crew: automatic triage, replies and escalation.",
+      },
+      {
+        name: "Souk Analytics",
+        desc: "E-commerce price intelligence SaaS for Morocco, scraping agents and automated daily reports.",
+      },
+      {
+        name: "Rendez-vous Bot",
+        desc: "WhatsApp appointment bot for clinics, synced with Google Calendar, FR/AR.",
+      },
     ],
     educationTitle: "Education & Languages",
     educationLabel: "Education",
@@ -619,7 +829,8 @@ const en: Dict = {
     timezone: "Timezone: Casablanca (GMT+1)",
     confirm: "Confirm booking",
     missing: "Please choose a date and a time slot.",
-    success: "Your booking request is ready in your email client. Send it and I confirm within 24 h.",
+    success:
+      "Your booking request is ready in your email client. Send it and I confirm within 24 h.",
     prev: "Previous month",
     next: "Next month",
     weekdays: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
@@ -641,32 +852,32 @@ const ar: Dict = {
       title: "البرامج التدريبية — Full Stack، تطبيقات الويب وأنظمة الوكلاء | صهيب راضي",
       desc: "ثلاثة مسارات تدريبية مكثفة، بمجموعات صغيرة، ومشاريع عملية 100%.",
     },
-    cv: { 
-      title: "السيرة الذاتية — صهيب راضي | مطور Full Stack وذكاء اصطناعي", 
-      desc: "المسار المهني، الخبرات، المشاريع، والمهارات التقنية." 
+    cv: {
+      title: "السيرة الذاتية — صهيب راضي | مطور Full Stack وذكاء اصطناعي",
+      desc: "المسار المهني، الخبرات، المشاريع، والمهارات التقنية.",
     },
-    contact: { 
-      title: "التواصل — صهيب راضي", 
-      desc: "تواصل معي بخصوص مشروع برمجي، برنامج تدريبي، أو استشارة تقنية." 
+    contact: {
+      title: "التواصل — صهيب راضي",
+      desc: "تواصل معي بخصوص مشروع برمجي، برنامج تدريبي، أو استشارة تقنية.",
     },
-    reservation: { 
-      title: "حجز جلسة — صهيب راضي", 
-      desc: "اختر التاريخ والوقت المناسب لمكالمة تعارف أو استشارة تقنية." 
+    reservation: {
+      title: "تواصل معي — صهيب راضي",
+      desc: "اختر التاريخ والوقت المناسب لمكالمة تعارف أو استشارة تقنية.",
     },
   },
-  nav: { 
-    services: "الخدمات", 
-    formations: "الدورات التدريبية", 
-    cv: "السيرة الذاتية", 
-    contact: "التواصل", 
-    cta: "احجز جلسة" 
+  nav: {
+    services: "الخدمات",
+    formations: "الدورات التدريبية",
+    cv: "السيرة الذاتية",
+    contact: "التواصل",
+    cta: "تواصل معي",
   },
-  footer: { 
-    rights: "مطور Full Stack وأنظمة الوكلاء المتعددين.", 
-    services: "الخدمات", 
-    formations: "الدورات التدريبية", 
-    cv: "السيرة الذاتية", 
-    contact: "التواصل" 
+  footer: {
+    rights: "مطور Full Stack وأنظمة الوكلاء المتعددين.",
+    services: "الخدمات",
+    formations: "الدورات التدريبية",
+    cv: "السيرة الذاتية",
+    contact: "التواصل",
   },
   home: {
     badge1: "متاح للعمل",
@@ -676,25 +887,54 @@ const ar: Dict = {
     ctaPrimary: "استعرض خدماتي",
     ctaSecondary: "اطّلع على السيرة الذاتية",
     highlights: [
-      { title: "منتجات SaaS متكاملة", body: "من ورشة التخطيط إلى الإطلاق: البنية التقنية، قواعد البيانات، تحسين الأداء، ولوحة التحكم." },
-      { title: "تطبيقات الويب", body: "حلول برمجية مخصصة: منصات التجارة الإلكترونية، أنظمة إدارة علاقات العملاء (CRM)، المنصات التعليمية، وأنظمة إدارة المحتوى (CMS)." },
-      { title: "تطوير تطبيقات الجوال", body: "تجارب مستخدم سلسة وعالية الأداء مصممة لتوفير أفضل تفاعل على كافة الهواتف." },
-      { title: "الدورات البرمجية", body: "تعلم Python وDjango وNext.js وهندسة البرمجيات من خلال تدريب عملي قائم على مشاريع حقيقية." },
+      {
+        title: "منتجات SaaS متكاملة",
+        body: "من ورشة التخطيط إلى الإطلاق: البنية التقنية، قواعد البيانات، تحسين الأداء، ولوحة التحكم.",
+      },
+      {
+        title: "تطبيقات الويب",
+        body: "حلول برمجية مخصصة: منصات التجارة الإلكترونية، أنظمة إدارة علاقات العملاء (CRM)، المنصات التعليمية، وأنظمة إدارة المحتوى (CMS).",
+      },
+      {
+        title: "تطوير تطبيقات الجوال",
+        body: "تجارب مستخدم سلسة وعالية الأداء مصممة لتوفير أفضل تفاعل على كافة الهواتف.",
+      },
+      {
+        title: "الدورات البرمجية",
+        body: "تعلم Python وDjango وNext.js وهندسة البرمجيات من خلال تدريب عملي قائم على مشاريع حقيقية.",
+      },
     ],
     architecture: {
       badge: "منصة رئيسية",
       title: "CerebralCrew | منصة العمليات المؤسسية الأصلية للذكاء الاصطناعي",
-      description: "نظام التشغيل المستقل للشركات متعددة المواقع، الذي يربط بين بنية متعددة المستأجرين (Multi-Tenant) وفرق وكلاء الذكاء الاصطناعي التعاونية.",
+      description:
+        "نظام التشغيل المستقل للشركات متعددة المواقع، الذي يربط بين بنية متعددة المستأجرين (Multi-Tenant) وفرق وكلاء الذكاء الاصطناعي التعاونية.",
       cards: [
-        { title: "بنية متعددة المستأجرين والكيانات (Multi-Tenant & Multi-Entity Architecture)", body: "مصممة لدعم هياكل الشركات المتعددة، وبيئات المتاجر المتعددة، وأكثر من 20 وحدة أساسية مع مخططات سمات منتجات قابلة للتخصيص ومحايدة للصناعة." },
-        { title: "التحكم في الوصول القائم على الأدوار (RBAC)", body: "نظام إذن دقيق يحكم مستخدمي البشر وقدرات وكلاء الذكاء الاصطناعي عبر الإدارات." },
-        { title: "إنشاء وكلاء بناءً على الهيكل التنظيمي (Org-Chart Agent Creation)", body: "يسمح للمسؤولين بإنشاء وتهيئة وكلاء الذكاء الاصطناعي ديناميكياً بناءً على الهياكل التنظيمية الداخلية للشركة." },
-        { title: "رفاق الذكاء الاصطناعي للموظفين (Employee AI Companions)", body: "وكلاء شخصيون مخصصون لكل عضو في الفريق يتكيفون باستمرار مع سير العمل الفردي والبيانات التشغيلية." },
-        { title: "تكامل متعدد القنوات والمؤسسات (Omnichannel & Enterprise Integration)", body: "واجهات المراسلة المباشرة عبر واتساب وتلغرام، مقترنة بتكاملات الخلفية (Backend) لـ Slack وHubSpot واستخراج بيانات الفواتير الآلي." }
-      ]
+        {
+          title: "بنية متعددة المستأجرين والكيانات (Multi-Tenant & Multi-Entity Architecture)",
+          body: "مصممة لدعم هياكل الشركات المتعددة، وبيئات المتاجر المتعددة، وأكثر من 20 وحدة أساسية مع مخططات سمات منتجات قابلة للتخصيص ومحايدة للصناعة.",
+        },
+        {
+          title: "التحكم في الوصول القائم على الأدوار (RBAC)",
+          body: "نظام إذن دقيق يحكم مستخدمي البشر وقدرات وكلاء الذكاء الاصطناعي عبر الإدارات.",
+        },
+        {
+          title: "إنشاء وكلاء بناءً على الهيكل التنظيمي (Org-Chart Agent Creation)",
+          body: "يسمح للمسؤولين بإنشاء وتهيئة وكلاء الذكاء الاصطناعي ديناميكياً بناءً على الهياكل التنظيمية الداخلية للشركة.",
+        },
+        {
+          title: "رفاق الذكاء الاصطناعي للموظفين (Employee AI Companions)",
+          body: "وكلاء شخصيون مخصصون لكل عضو في الفريق يتكيفون باستمرار مع سير العمل الفردي والبيانات التشغيلية.",
+        },
+        {
+          title: "تكامل متعدد القنوات والمؤسسات (Omnichannel & Enterprise Integration)",
+          body: "واجهات المراسلة المباشرة عبر واتساب وتلغرام، مقترنة بتكاملات الخلفية (Backend) لـ Slack وHubSpot واستخراج بيانات الفواتير الآلي.",
+        },
+      ],
     },
     approachTitle: "منهجية عمل واضحة: التخطيط، التسليم السريع، ثم التحسين.",
-    approachBody: "يبدأ كل مشروع بورشة تحديد المتطلبات مدتها ساعة. نخرج منها بنطاق عمل محدد، وميزانية واقعية، وأول تسليم في أقل من أسبوعين.",
+    approachBody:
+      "يبدأ كل مشروع بورشة تحديد المتطلبات مدتها ساعة. نخرج منها بنطاق عمل محدد، وميزانية واقعية، وأول تسليم في أقل من أسبوعين.",
     approachPoints: [
       "نموذج أولي يعمل خلال 10 إلى 14 يوماً",
       "كود نظيف، مُختبَر، وموثّق بالكامل ملك لك",
@@ -704,8 +944,14 @@ const ar: Dict = {
     formationsLabel: "الدورات التدريبية",
     formationsTitle: "ثلاثة مسارات مكثفة لتصبح مطوراً محترفاً أو لتصمم وكلاءك الأذكياء.",
     formationsTeasers: [
-      { t: "تطوير Full Stack متكامل", d: "12 أسبوعاً — JavaScript، React، Node.js، PostgreSQL، والنشر." },
-      { t: "تطبيقات الويب الاحترافية", d: "6 أسابيع — الواجهات الحديثة، واجهات REST API، المصادقة والاختبارات." },
+      {
+        t: "تطوير Full Stack متكامل",
+        d: "12 أسبوعاً — JavaScript، React، Node.js، PostgreSQL، والنشر.",
+      },
+      {
+        t: "تطبيقات الويب الاحترافية",
+        d: "6 أسابيع — الواجهات الحديثة، واجهات REST API، المصادقة والاختبارات.",
+      },
       { t: "تطوير أنظمة الوكلاء", d: "8 أسابيع — CrewAI، النماذج اللغوية، RAG، والإنتاج." },
     ],
     formationsLink: "اطّلع على تفاصيل البرامج",
@@ -714,7 +960,12 @@ const ar: Dict = {
     ctaButton: "احجز جلسة",
     upworkRating: "تقييم 5.0 على منصة Upwork",
     projects: [
-      { title: "CerebralCrew", url: "https://cerebralcrew.com", desc: "منصة تشغيلية مدعومة بالذكاء الاصطناعي للشركات.", images: ["/src/assets/cerebralcrew/1.png"] }
+      {
+        title: "CerebralCrew",
+        url: "https://cerebralcrew.com",
+        desc: "منصة تشغيلية مدعومة بالذكاء الاصطناعي للشركات.",
+        images: ["/src/assets/cerebralcrew/1.png"],
+      },
     ],
   },
   services: {
@@ -726,37 +977,61 @@ const ar: Dict = {
         title: "تطوير تطبيقات الجوال",
         price: "تسعير بعد مكالمة الاستكشاف",
         body: "تطبيقات iOS وأندرويد عالية الأداء باستخدام React Native / Expo: المصادقة، الإشعارات، تحسين الأداء والعمل بدون إنترنت.",
-        points: ["كود برمجي موحد للمتجرين", "نظام تصميم ورسوم متحركة متقنة", "النشر على App Store و Google Play مشمول"],
+        points: [
+          "كود برمجي موحد للمتجرين",
+          "نظام تصميم ورسوم متحركة متقنة",
+          "النشر على App Store و Google Play مشمول",
+        ],
       },
       {
         title: "تطوير تطبيقات الويب",
         price: "تسعير بعد مكالمة الاستكشاف",
         body: "تطبيقات ويب سريعة وآمنة: لوحات تحكم، بوابات للعملاء، وتكاملات عبر API.",
-        points: ["Django / Python, React, TypeScript, PostgreSQL", "إدارة الصلاحيات والأدوار وسجل التتبع", "اختبارات آليّة ونشر مستمر (CI/CD)"],
+        points: [
+          "Django / Python, React, TypeScript, PostgreSQL",
+          "إدارة الصلاحيات والأدوار وسجل التتبع",
+          "اختبارات آليّة ونشر مستمر (CI/CD)",
+        ],
       },
       {
         title: "SaaS — من الفكرة إلى المنتج",
         price: "حسب نطاق المشروع",
         body: "مرافقة متكاملة من الفكرة إلى الإطلاق: MVP، إدارة الاشتراكات، تعدد المستأجرين، والتحليلات.",
-        points: ["ورشة عمل للتخطيط وخريطة الطريق", "إطلاق MVP خلال 6 إلى 10 أسابيع", "أنظمة دفع واشتراكات عبر Stripe / Paddle"],
+        points: [
+          "ورشة عمل للتخطيط وخريطة الطريق",
+          "إطلاق MVP خلال 6 إلى 10 أسابيع",
+          "أنظمة دفع واشتراكات عبر Stripe / Paddle",
+        ],
       },
       {
         title: "أنظمة الوكلاء المتعددين (CrewAI)",
         price: "تسعير بعد مكالمة الاستكشاف",
         body: "أنظمة وكلاء ذكاء اصطناعي مستقلة لأتمتة مهامك: أبحاث السوق، تأهيل العملاء، وإعداد التقارير.",
-        points: ["بنية الوكلاء والأدوات والذاكرة", "تقنية RAG للمستندات الداخلية", "إدارة التكاليف وضوابط الأمان"],
+        points: [
+          "بنية الوكلاء والأدوات والذاكرة",
+          "تقنية RAG للمستندات الداخلية",
+          "إدارة التكاليف وضوابط الأمان",
+        ],
       },
       {
         title: "بوتات ووكلاء تلغرام / واتساب",
         price: "تسعير بعد مكالمة الاستكشاف",
         body: "مساعدون أذكياء مرتبطون ببياناتك: استقبال الطلبات، الحجوزات، والدعم الفني الآلي.",
-        points: ["WhatsApp Business API و Telegram Bot API", "ربط مباشر مع أنظمة CRM وقواعد البيانات", "ردود ذكية متعددة اللغات (العربية، الفرنسية، الإنجليزية)"],
+        points: [
+          "WhatsApp Business API و Telegram Bot API",
+          "ربط مباشر مع أنظمة CRM وقواعد البيانات",
+          "ردود ذكية متعددة اللغات (العربية، الفرنسية، الإنجليزية)",
+        ],
       },
       {
         title: "استشارات وتوجيه تقني",
         price: "تسعير بعد مكالمة الاستكشاف",
         body: "تدقيق تقني، اختيار البنية التحتية، مراجعة الكود، أو تحديد استراتيجية الذكاء الاصطناعي.",
-        points: ["تدقيق البنية التقنية والديون البرمجية", "تحديد استراتيجية الذكاء الاصطناعي", "توجيه الفريق البرمجي ومراجعة الكود"],
+        points: [
+          "تدقيق البنية التقنية والديون البرمجية",
+          "تحديد استراتيجية الذكاء الاصطناعي",
+          "توجيه الفريق البرمجي ومراجعة الكود",
+        ],
       },
     ],
     ctaTitle: "لنتحدث عن مشروعك هذا الأسبوع.",
@@ -817,7 +1092,7 @@ const ar: Dict = {
       "تم تصميم كل برنامج لجعلك جاهزاً للعمل مباشرة. استفد من التوجيه الفردي (Mentorship)، والمشاريع العملية، والمتابعة الشخصية لضمان نجاحك.",
     sessionsButton: "اطلب البرنامج التفصيلي واحجز مكانك",
   },
-  cv: { 
+  cv: {
     badge: "السيرة الذاتية",
     name: "صهيب راضي",
     lead: "أساعد رواد الأعمال والشركات على تحويل أفكارهم إلى منصات SaaS وتطبيقات ويب وجوال مدعومة بالذكاء الاصطناعي وجاهزة للإنتاج. أمتلك خبرة متكاملة في بناء البنية التحتية بـ Django، والواجهات بـ Next.js، وأتمتة مسارات العمل بـ CrewAI — من المفهوم الأولي حتى الإطلاق.",
@@ -871,23 +1146,56 @@ const ar: Dict = {
     ],
     skillsTitle: "المهارات التقنية",
     skills: [
-      { group: "تطوير الخلفية", items: ["Python", "Django", "Django REST Framework", "PostgreSQL", "تصميم قواعد البيانات", "هندسة النظم"] },
-      { group: "تطوير الواجهات والموبايل", items: ["Next.js", "React", "TypeScript", "React Native", "Flutter", "Tailwind CSS"] },
-      { group: "أنظمة الذكاء الاصطناعي", items: ["CrewAI (سير عمل الوكلاء)", "تنظيم النماذج اللغوية (LLM Orchestration)", "خطوط عمل الوكلاء المستقلة"] },
-      { group: "ربط أنظمة المؤسسات", items: ["Salesforce", "HubSpot", "Odoo", "Slack", "Telegram", "WhatsApp API"] },
+      {
+        group: "تطوير الخلفية",
+        items: [
+          "Python",
+          "Django",
+          "Django REST Framework",
+          "PostgreSQL",
+          "تصميم قواعد البيانات",
+          "هندسة النظم",
+        ],
+      },
+      {
+        group: "تطوير الواجهات والموبايل",
+        items: ["Next.js", "React", "TypeScript", "React Native", "Flutter", "Tailwind CSS"],
+      },
+      {
+        group: "أنظمة الذكاء الاصطناعي",
+        items: [
+          "CrewAI (سير عمل الوكلاء)",
+          "تنظيم النماذج اللغوية (LLM Orchestration)",
+          "خطوط عمل الوكلاء المستقلة",
+        ],
+      },
+      {
+        group: "ربط أنظمة المؤسسات",
+        items: ["Salesforce", "HubSpot", "Odoo", "Slack", "Telegram", "WhatsApp API"],
+      },
     ],
     projectsTitle: "مشاريع بارزة",
     projects: [
-      { name: "AgentDesk", desc: "منصة دعم عملاء تدار بواسطة وكلاء CrewAI: فرز وإجابة وتصعيد تلقائي." },
-      { name: "Souk Analytics", desc: "منصة SaaS لتحليل أسعار التجارة الإلكترونية، تعتمد على وكلاء جمع البيانات وإصدار تقارير يومية." },
-      { name: "Rendez-vous Bot", desc: "بوت واتساب لحجز المواعيد للعيادات مرتبط بـ Google Calendar، يدعم العربية والفرنسية." },
+      {
+        name: "AgentDesk",
+        desc: "منصة دعم عملاء تدار بواسطة وكلاء CrewAI: فرز وإجابة وتصعيد تلقائي.",
+      },
+      {
+        name: "Souk Analytics",
+        desc: "منصة SaaS لتحليل أسعار التجارة الإلكترونية، تعتمد على وكلاء جمع البيانات وإصدار تقارير يومية.",
+      },
+      {
+        name: "Rendez-vous Bot",
+        desc: "بوت واتساب لحجز المواعيد للعيادات مرتبط بـ Google Calendar، يدعم العربية والفرنسية.",
+      },
     ],
     educationTitle: "المؤهلات واللغات",
     educationLabel: "المؤهل الأكاديمي",
     educationValue: "شهادة مهندس دولة في الهندسة المعلوماتية",
     educationSchool: "المدرسة المغربية لعلوم المهندسين — 2005 - 2010",
     languagesLabel: "اللغات",
-    languagesValue: "العربية (اللغة الأم) · الفرنسية (بطلاقة) · الإنجليزية (مستوى مهني) · التركية (مستوى A2)",
+    languagesValue:
+      "العربية (اللغة الأم) · الفرنسية (بطلاقة) · الإنجليزية (مستوى مهني) · التركية (مستوى A2)",
   },
   contact: {
     badge: "التواصل",

@@ -21,7 +21,6 @@ import { EmblaOptionsType } from "embla-carousel";
 const SLIDES = [img1, img2, img3, img4, img5, img6, img7, img8];
 const OPTIONS: EmblaOptionsType = { direction: "rtl" };
 
-
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -31,17 +30,20 @@ export const Route = createFileRoute("/")({
         content:
           "Développement mobile, web apps, SaaS de l'idée au produit, systèmes multi-agents CrewAI et bots Telegram/WhatsApp. Formations et consulting.",
       },
-      { property: "og:title", content: "Sohaib Radi — Développeur Full Stack & Systèmes Multi-Agents" },
+      {
+        property: "og:title",
+        content: "Sohaib Radi — Développeur Full Stack & Systèmes Multi-Agents",
+      },
       {
         property: "og:description",
         content:
           "Je conçois des produits logiciels et des systèmes d'agents IA : mobile, web, SaaS, CrewAI, bots Telegram et WhatsApp.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://atlas-insurance-offer.lovable.app/" },
+      { property: "og:url", content: "https://https://www.icodezone.codes//" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "https://atlas-insurance-offer.lovable.app/" }],
+    links: [{ rel: "canonical", href: "https://https://www.icodezone.codes//" }],
   }),
   component: Index,
 });
@@ -100,9 +102,9 @@ function Index() {
                   <span className="flex items-center gap-1 text-sm font-semibold text-zinc-700">
                     <span className="text-yellow-500">★★★★★</span>
                     <span>{t.home.upworkRating}</span>
-                    </span>
-                    </a>
-                    </div>
+                  </span>
+                </a>
+              </div>
             </div>
           </div>
         </section>
@@ -115,12 +117,19 @@ function Index() {
                 const tone = tones[i % tones.length];
                 if (!Icon || !tone) return null;
                 return (
-                  <div key={h.title} className="bg-surface p-8 rounded-xl ring-1 ring-black/5 flex flex-col">
-                    <div className={`size-10 ${tone.wrap} rounded-lg flex items-center justify-center mb-6`}>
+                  <div
+                    key={h.title}
+                    className="bg-surface p-8 rounded-xl ring-1 ring-black/5 flex flex-col"
+                  >
+                    <div
+                      className={`size-10 ${tone.wrap} rounded-lg flex items-center justify-center mb-6`}
+                    >
                       <Icon className={`size-5 ${tone.icon} shrink-0`} />
                     </div>
                     <h3 className="text-xl font-medium mb-4">{h.title}</h3>
-                    <p className="text-zinc-600 text-sm leading-normal max-w-[48ch] text-pretty">{h.body}</p>
+                    <p className="text-zinc-600 text-sm leading-normal max-w-[48ch] text-pretty">
+                      {h.body}
+                    </p>
                   </div>
                 );
               })}
@@ -128,17 +137,22 @@ function Index() {
           </div>
         </section>
 
-       
-
         <section className="py-24 px-6">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row gap-16 items-center">
               <div className="flex-1">
-                <h2 className="text-3xl font-medium leading-tight mb-6 text-balance">{t.home.approachTitle}</h2>
-                <p className="text-zinc-600 text-base mb-8 max-w-[48ch] text-pretty">{t.home.approachBody}</p>
+                <h2 className="text-3xl font-medium leading-tight mb-6 text-balance">
+                  {t.home.approachTitle}
+                </h2>
+                <p className="text-zinc-600 text-base mb-8 max-w-[48ch] text-pretty">
+                  {t.home.approachBody}
+                </p>
                 <ul className="space-y-4">
                   {t.home.approachPoints.map((item) => (
-                    <li key={item} className="flex items-center gap-3 text-sm font-medium text-zinc-800">
+                    <li
+                      key={item}
+                      className="flex items-center gap-3 text-sm font-medium text-zinc-800"
+                    >
                       <span className="size-5 rounded-full bg-accent-green/10 flex items-center justify-center shrink-0">
                         <Check className="size-3 text-accent-green" strokeWidth={3} />
                       </span>
@@ -165,7 +179,9 @@ function Index() {
           <div className="max-w-7xl mx-auto">
             <div className="flex items-center gap-3 mb-4">
               <GraduationCap className="size-5 text-brand" />
-              <span className="text-xs font-semibold uppercase tracking-wider text-brand">{t.home.formationsLabel}</span>
+              <span className="text-xs font-semibold uppercase tracking-wider text-brand">
+                {t.home.formationsLabel}
+              </span>
             </div>
             <h2 className="text-3xl font-medium leading-tight mb-10 max-w-[36ch] text-balance">
               {t.home.formationsTitle}
@@ -215,16 +231,18 @@ function Index() {
               ))}
             </div>
 
-            <div className="pt-12">
+            {/* <div className="pt-12">
               <EmblaCarousel key={dir} slides={SLIDES} options={{ direction: dir }} />
-            </div>
+            </div> */}
           </div>
         </section>
 
         <section className="py-24 px-6">
           <div className="max-w-7xl mx-auto">
             <div className="bg-brand p-12 rounded-2xl flex flex-col items-center text-center">
-              <h2 className="text-3xl font-medium text-surface mb-6 text-balance">{t.home.ctaTitle}</h2>
+              <h2 className="text-3xl font-medium text-surface mb-6 text-balance">
+                {t.home.ctaTitle}
+              </h2>
               <p className="text-brand-muted mb-10 max-w-[48ch] text-pretty">{t.home.ctaBody}</p>
               <Link
                 to="/reservation"

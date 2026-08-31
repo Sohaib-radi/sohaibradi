@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Bot, Check, Cpu, MessagesSquare, Rocket, Smartphone, Workflow } from "lucide-react";
 
 import { SiteNav } from "@/components/site-nav";
@@ -74,9 +74,7 @@ function ServicesPage() {
             <h1 className="text-4xl md:text-5xl font-semibold leading-tight text-balance mb-8">
               {t.services.h1}
             </h1>
-            <p className="text-lg text-zinc-600 text-pretty">
-              {t.services.lead}
-            </p>
+            <p className="text-lg text-zinc-600 text-pretty">{t.services.lead}</p>
           </div>
         </section>
 
@@ -93,7 +91,9 @@ function ServicesPage() {
                     <Icon className="size-5 text-brand shrink-0" />
                   </div>
                   <h2 className="text-xl font-medium mb-2">{s.title}</h2>
-                  <p className="text-xs font-semibold uppercase tracking-wider text-accent-green mb-4">{s.price}</p>
+                  <p className="text-xs font-semibold uppercase tracking-wider text-accent-green mb-4">
+                    {s.price}
+                  </p>
                   <p className="text-zinc-600 text-sm leading-normal text-pretty mb-6">{s.body}</p>
                   <ul className="space-y-3 mt-auto">
                     {s.points.map((p) => (
@@ -120,12 +120,12 @@ function ServicesPage() {
               <p className="text-brand-muted mb-10 max-w-[48ch] text-pretty">
                 {t.services.ctaBody}
               </p>
-              <a
-                href="mailto:contact@sohaib.dev"
+              <Link
+                to="/reservation"
                 className="bg-surface text-brand text-sm font-medium py-3 px-8 rounded-lg ring-1 ring-surface hover:bg-surface/90 transition-colors"
               >
                 {t.services.ctaButton}
-              </a>
+              </Link>
             </div>
           </div>
         </section>

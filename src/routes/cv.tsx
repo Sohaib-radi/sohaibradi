@@ -17,7 +17,8 @@ export const Route = createFileRoute("/cv")({
       { property: "og:title", content: "Mon CV — Sohaib Radi, Développeur Full Stack & IA" },
       {
         property: "og:description",
-        content: "6 ans d'expérience en développement produit, web, mobile et systèmes d'agents IA.",
+        content:
+          "6 ans d'expérience en développement produit, web, mobile et systèmes d'agents IA.",
       },
       { property: "og:type", content: "profile" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -38,10 +39,10 @@ function CvPage() {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-muted text-brand text-xs font-semibold mb-6 uppercase tracking-wider">
               {t.cv.badge}
             </div>
-            <h1 className="text-4xl md:text-5xl font-semibold leading-tight text-balance mb-6">{t.cv.name}</h1>
-            <p className="text-lg text-zinc-600 mb-10 max-w-full text-pretty">
-              {t.cv.lead}
-            </p>
+            <h1 className="text-4xl md:text-5xl font-semibold leading-tight text-balance mb-6">
+              {t.cv.name}
+            </h1>
+            <p className="text-lg text-zinc-600 mb-10 max-w-full text-pretty">{t.cv.lead}</p>
             <div className="flex flex-wrap gap-4">
               <a
                 href="https://github.com/Sohaib-radi"
@@ -71,12 +72,17 @@ function CvPage() {
             <div className="space-y-8">
               {t.cv.experiences.map((e) => (
                 <div key={e.role} className="bg-surface p-8 rounded-xl ring-1 ring-black/5">
-                  <p className="text-xs font-semibold uppercase tracking-wider text-accent-green mb-3">{e.period}</p>
+                  <p className="text-xs font-semibold uppercase tracking-wider text-accent-green mb-3">
+                    {e.period}
+                  </p>
                   <h3 className="text-lg font-medium mb-1">{e.role}</h3>
                   <p className="text-sm text-zinc-500 mb-5">{e.place}</p>
                   <ul className="space-y-2">
                     {e.bullets.map((b) => (
-                      <li key={b} className="text-sm text-zinc-600 leading-normal text-pretty flex gap-3">
+                      <li
+                        key={b}
+                        className="text-sm text-zinc-600 leading-normal text-pretty flex gap-3"
+                      >
                         <span className="mt-2 size-1.5 rounded-full bg-brand shrink-0" />
                         {b}
                       </li>
@@ -94,10 +100,15 @@ function CvPage() {
             <div className="grid sm:grid-cols-2 gap-6">
               {t.cv.skills.map((s) => (
                 <div key={s.group} className="bg-surface p-6 rounded-xl ring-1 ring-black/5">
-                  <h3 className="text-sm font-semibold text-brand mb-4 uppercase tracking-wider">{s.group}</h3>
+                  <h3 className="text-sm font-semibold text-brand mb-4 uppercase tracking-wider">
+                    {s.group}
+                  </h3>
                   <div className="flex flex-wrap gap-2">
                     {s.items.map((i) => (
-                      <span key={i} className="text-xs font-medium px-2.5 py-1 rounded-md bg-zinc-100 text-zinc-700">
+                      <span
+                        key={i}
+                        className="text-xs font-medium px-2.5 py-1 rounded-md bg-zinc-100 text-zinc-700"
+                      >
                         {i}
                       </span>
                     ))}
@@ -108,20 +119,21 @@ function CvPage() {
           </div>
         </section>
 
-      
-
-
         <section className="pb-24 px-6">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-2xl font-medium mb-10">{t.cv.educationTitle}</h2>
             <div className="grid sm:grid-cols-2 gap-6">
               <div className="bg-surface p-6 rounded-xl ring-1 ring-black/5">
-                <h3 className="text-sm font-semibold text-brand mb-4 uppercase tracking-wider">{t.cv.educationLabel}</h3>
+                <h3 className="text-sm font-semibold text-brand mb-4 uppercase tracking-wider">
+                  {t.cv.educationLabel}
+                </h3>
                 <p className="text-sm text-zinc-700 font-medium">{t.cv.educationValue}</p>
                 <p className="text-sm text-zinc-500">{t.cv.educationSchool}</p>
               </div>
               <div className="bg-surface p-6 rounded-xl ring-1 ring-black/5">
-                <h3 className="text-sm font-semibold text-brand mb-4 uppercase tracking-wider">{t.cv.languagesLabel}</h3>
+                <h3 className="text-sm font-semibold text-brand mb-4 uppercase tracking-wider">
+                  {t.cv.languagesLabel}
+                </h3>
                 <p className="text-sm text-zinc-600">{t.cv.languagesValue}</p>
               </div>
             </div>

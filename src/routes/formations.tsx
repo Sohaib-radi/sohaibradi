@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { CalendarDays, Check, Clock, Cpu, GraduationCap, Users, Workflow } from "lucide-react";
 
 import { SiteNav } from "@/components/site-nav";
@@ -29,7 +29,7 @@ export const Route = createFileRoute("/formations")({
 
 function FormationsPage() {
   const { t } = useI18n();
-  
+
   const formations = [
     { icon: Cpu, ...t.formations.items[0] },
     { icon: Users, ...t.formations.items[1] },
@@ -50,9 +50,7 @@ function FormationsPage() {
               <h1 className="text-4xl md:text-5xl font-semibold leading-tight text-balance mb-8">
                 {t.formations.h1}
               </h1>
-              <p className="text-lg text-zinc-600 text-pretty">
-                {t.formations.lead}
-              </p>
+              <p className="text-lg text-zinc-600 text-pretty">{t.formations.lead}</p>
             </div>
           </div>
         </section>
@@ -60,7 +58,10 @@ function FormationsPage() {
         <section className="pb-24 px-6">
           <div className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-8">
             {formations.map((f) => (
-              <div key={f.title} className="bg-surface p-8 rounded-xl ring-1 ring-black/5 flex flex-col">
+              <div
+                key={f.title}
+                className="bg-surface p-8 rounded-xl ring-1 ring-black/5 flex flex-col"
+              >
                 <div className="size-10 bg-brand-muted rounded-lg flex items-center justify-center mb-6">
                   <f.icon className="size-5 text-brand shrink-0" />
                 </div>
@@ -87,12 +88,12 @@ function FormationsPage() {
                   ))}
                 </ul>
                 <div className="mt-auto pt-6 border-t border-zinc-200">
-                  <a
-                    href="mailto:contact@sohaib.dev"
+                  <Link
+                    to="/reservation"
                     className="block w-full bg-brand text-surface text-sm font-medium py-3 rounded-lg hover:bg-brand/90 transition-colors text-center"
                   >
                     {t.formations.enroll}
-                  </a>
+                  </Link>
                 </div>
               </div>
             ))}
@@ -109,12 +110,12 @@ function FormationsPage() {
               <p className="text-brand-muted mb-10 max-w-[60ch] text-pretty">
                 {t.formations.sessionsBody}
               </p>
-              <a
-                href="mailto:contact@sohaib.dev"
+              <Link
+                to="/reservation"
                 className="bg-surface text-brand text-sm font-bold py-3 px-8 rounded-lg ring-1 ring-surface hover:bg-surface/90 transition-colors"
               >
                 {t.formations.sessionsButton}
-              </a>
+              </Link>
             </div>
           </div>
         </section>
