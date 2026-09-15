@@ -21,3 +21,18 @@ export async function submitReview(data: {
   if (error) console.error("Review submission failed:", error);
   return !error;
 }
+
+export type ApprovedReview = { name: string; rating: number; text: string };
+
+export async function fetchApprovedReviews(): Promise<ApprovedReview[]> {
+  const { data, error } = await supabase
+    .from("reviews")
+    .select("name, rating, text")
+    .eq("approved", true)
+    .order("created_at", { ascending: false });
+  if (error) {
+    console.error("Fetching reviews failed:", error);
+    return [];
+  }
+  return data ?? [];
+}

@@ -12,7 +12,8 @@ import { Toaster } from "@/components/ui/sonner";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-import { I18nProvider } from "../i18n";
+import { getLangCookie } from "../lib/lang-cookie";
+import { I18nProvider, resolveLang } from "../i18n";
 
 function NotFoundComponent() {
   return (
@@ -80,10 +81,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Sohaib Radi — Full Stack & AI Developer" },
-      { name: "description", content: "Building AI-powered SaaS platforms and multi-agent systems." },
+      {
+        name: "description",
+        content: "Building AI-powered SaaS platforms and multi-agent systems.",
+      },
       { name: "author", content: "Sohaib Radi" },
       { property: "og:title", content: "Sohaib Radi — Full Stack & AI Developer" },
-      { property: "og:description", content: "Building AI-powered SaaS platforms and multi-agent systems." },
+      {
+        property: "og:description",
+        content: "Building AI-powered SaaS platforms and multi-agent systems.",
+      },
       { property: "og:type", content: "website" },
       { property: "og:image", content: "/favicon/android-chrome-512x512.png" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -112,6 +119,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "apple-touch-icon", href: "/favicon/apple-touch-icon.png", sizes: "180x180" },
     ],
   }),
+  loader: () => getLangCookie(),
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
@@ -119,8 +127,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: ReactNode }) {
+  const lang = resolveLang(Route.useLoaderData());
+  const dir = lang === "ar" ? "rtl" : "ltr";
+
   return (
-    <html lang="en">
+    <html lang={lang} dir={dir}>
       <head>
         <HeadContent />
       </head>
@@ -134,10 +145,11 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const initialLang = Route.useLoaderData();
 
   return (
     <QueryClientProvider client={queryClient}>
-      <I18nProvider>
+      <I18nProvider initialLang={initialLang}>
         {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
         <Outlet />
         <Toaster />

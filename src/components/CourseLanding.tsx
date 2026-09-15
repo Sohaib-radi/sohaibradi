@@ -15,10 +15,14 @@
 // prerequisites), the text is copied verbatim from that file.
 
 import * as Dialog from "@radix-ui/react-dialog";
-import { useRef, useState, type CSSProperties, type ReactNode } from "react";
+import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
 
 import { useI18n } from "@/i18n";
-import { submitEnrollment, submitReview as submitReviewToSupabase } from "@/lib/course-forms";
+import {
+  fetchApprovedReviews,
+  submitEnrollment,
+  submitReview as submitReviewToSupabase,
+} from "@/lib/course-forms";
 
 type ThemeTokens = {
   bg: string;
@@ -655,6 +659,16 @@ export default function CourseLanding({
   const textRef = useRef<HTMLTextAreaElement>(null);
   const ratingRef = useRef<HTMLSelectElement>(null);
 
+  useEffect(() => {
+    let cancelled = false;
+    fetchApprovedReviews().then((rows) => {
+      if (!cancelled && rows.length > 0) setReviews(rows);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
   type FormStatus = "idle" | "submitting" | "success" | "error";
 
   const [enrollOpen, setEnrollOpen] = useState(false);
@@ -722,13 +736,35 @@ export default function CourseLanding({
   };
   const card: CSSProperties = {
     background: t.bg,
-    border: `1px solid ${ink(0.12)}`,
-    borderRadius: 12,
-    padding: 22,
+    border: `1px solid ${ink(0.1)}`,
+    borderRadius: 14,
+    padding: "22px 22px 20px",
+    boxShadow: `0 1px 2px ${ink(0.04)}, 0 8px 20px -12px ${ink(0.15)}`,
     display: "flex",
     flexDirection: "column",
-    gap: 12,
+    gap: 14,
   };
+  const AVATAR_COLORS = [
+    "oklch(0.7 0.14 30)",
+    "oklch(0.7 0.14 90)",
+    "oklch(0.62 0.14 160)",
+    "oklch(0.65 0.14 220)",
+    "oklch(0.65 0.14 280)",
+    "oklch(0.7 0.16 340)",
+  ];
+  const avatarColor = (name: string) => {
+    let hash = 0;
+    for (let i = 0; i < name.length; i++) hash = (hash * 31 + name.charCodeAt(i)) >>> 0;
+    return AVATAR_COLORS[hash % AVATAR_COLORS.length];
+  };
+  const initials = (name: string) =>
+    name
+      .trim()
+      .split(/\s+/)
+      .slice(0, 2)
+      .map((w) => w[0])
+      .join("")
+      .toUpperCase();
 
   const overlayStyle: CSSProperties = {
     position: "fixed",
@@ -874,13 +910,20 @@ export default function CourseLanding({
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-         
           <div className="relative inline-flex items-center">
-            <span className="absolute -top-3 left-0 px-1.5 py-0.5 text-[10px] font-semibold leading-none rounded bg-sky-100 text-sky-700 whitespace-nowrap">I code</span>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 288" className="w-[80px] h-auto fill-current text-brand">
+            <span className="absolute -top-3 left-0 px-1.5 py-0.5 text-[10px] font-semibold leading-none rounded bg-sky-100 text-sky-700 whitespace-nowrap">
+              I code
+            </span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 1080 288"
+              className="w-[80px] h-auto fill-current text-brand"
+            >
               <ellipse cx="996" cy="204" fill="#FA541C" rx="60" ry="60"></ellipse>
-              <path fill="#1f2a55" d="M712 264h-58.815l-98.37-148.034V264H496V24h58.815l98.37 148.718V24H712v240zM801.265 70.838v48.547H880v45.128h-78.735v52.649H888V264H744V24h144v46.838h-86.735zM344.333 264c-22 0-42.222-5.118-60.666-15.355-18.223-10.236-32.778-24.478-43.667-42.726-10.667-18.47-16-39.165-16-62.086s5.333-43.505 16-61.752c10.889-18.248 25.444-32.49 43.667-42.726C302.111 29.118 322.333 24 344.333 24s42.111 5.118 60.334 15.355C423.111 49.59 437.556 63.833 448 82.08c10.667 18.247 16 38.831 16 61.752s-5.333 43.616-16 62.086c-10.667 18.248-25.111 32.49-43.333 42.726C386.444 258.882 366.333 264 344.333 264zm0-52.072c18.667 0 33.556-6.231 44.667-18.693 11.333-12.462 17-28.929 17-49.402 0-20.695-5.667-37.163-17-49.402-11.111-12.462-26-18.692-44.667-18.692-18.889 0-34 6.12-45.333 18.358-11.111 12.24-16.667 28.818-16.667 49.736 0 20.696 5.556 37.274 16.667 49.736 11.333 12.239 26.444 18.359 45.333 18.359zM89.71 216.137H192V264H24v-44.444L125.613 71.863H24V24h168v44.444L89.71 216.137z">
-              </path>
+              <path
+                fill="#1f2a55"
+                d="M712 264h-58.815l-98.37-148.034V264H496V24h58.815l98.37 148.718V24H712v240zM801.265 70.838v48.547H880v45.128h-78.735v52.649H888V264H744V24h144v46.838h-86.735zM344.333 264c-22 0-42.222-5.118-60.666-15.355-18.223-10.236-32.778-24.478-43.667-42.726-10.667-18.47-16-39.165-16-62.086s5.333-43.505 16-61.752c10.889-18.248 25.444-32.49 43.667-42.726C302.111 29.118 322.333 24 344.333 24s42.111 5.118 60.334 15.355C423.111 49.59 437.556 63.833 448 82.08c10.667 18.247 16 38.831 16 61.752s-5.333 43.616-16 62.086c-10.667 18.248-25.111 32.49-43.333 42.726C386.444 258.882 366.333 264 344.333 264zm0-52.072c18.667 0 33.556-6.231 44.667-18.693 11.333-12.462 17-28.929 17-49.402 0-20.695-5.667-37.163-17-49.402-11.111-12.462-26-18.692-44.667-18.692-18.889 0-34 6.12-45.333 18.358-11.111 12.24-16.667 28.818-16.667 49.736 0 20.696 5.556 37.274 16.667 49.736 11.333 12.239 26.444 18.359 45.333 18.359zM89.71 216.137H192V264H24v-44.444L125.613 71.863H24V24h168v44.444L89.71 216.137z"
+              ></path>
             </svg>
           </div>
         </div>
@@ -972,14 +1015,14 @@ export default function CourseLanding({
               <span style={{ width: 6, height: 6, borderRadius: "50%", background: t.accent }} />
               {c.badge}
               <div
-            style={{
-              width: 11,
-              height: 11,
-              borderRadius: "50%",
-              background: t.accent,
-              animation: "clpulse 2.4s ease-in-out infinite",
-            }}
-          />
+                style={{
+                  width: 11,
+                  height: 11,
+                  borderRadius: "50%",
+                  background: t.accent,
+                  animation: "clpulse 2.4s ease-in-out infinite",
+                }}
+              />
             </div>
             <h1
               style={{
@@ -1360,31 +1403,59 @@ export default function CourseLanding({
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,300px),1fr))",
+                gridTemplateColumns: "repeat(auto-fill,minmax(260px,340px))",
                 gap: 18,
               }}
             >
               {reviews.map((r, i) => (
                 <div key={i} style={card}>
-                  <span style={{ fontSize: 14, letterSpacing: 2, color: t.accent, lineHeight: 1 }}>
-                    {"★".repeat(r.rating) + "☆".repeat(5 - r.rating)}
-                  </span>
+                  <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                    <div
+                      style={{
+                        width: 40,
+                        height: 40,
+                        flex: "none",
+                        borderRadius: "50%",
+                        background: avatarColor(r.name),
+                        color: "#fff",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        font: `600 14px/1 ${sans}`,
+                      }}
+                    >
+                      {initials(r.name)}
+                    </div>
+                    <div style={{ display: "flex", flexDirection: "column", gap: 3, minWidth: 0 }}>
+                      <span
+                        style={{
+                          font: `600 14px/1.2 ${label}`,
+                          color: t.ink,
+                          whiteSpace: "nowrap",
+                          overflow: "hidden",
+                          textOverflow: "ellipsis",
+                        }}
+                      >
+                        {r.name}
+                      </span>
+                      <span
+                        style={{ fontSize: 13, letterSpacing: 1.5, color: t.accent, lineHeight: 1 }}
+                      >
+                        {"★".repeat(r.rating) + "☆".repeat(5 - r.rating)}
+                      </span>
+                    </div>
+                  </div>
                   <p
                     style={{
                       margin: 0,
-                      fontSize: 15.5,
-                      lineHeight: 1.55,
-                      color: ink(0.8),
+                      fontSize: 14.5,
+                      lineHeight: 1.6,
+                      color: ink(0.76),
                       textWrap: "pretty",
                     }}
                   >
                     {r.text}
                   </p>
-                  <span
-                    style={{ marginTop: "auto", font: `400 12px/1 ${label}`, color: ink(t.dim2) }}
-                  >
-                    {r.name}
-                  </span>
                 </div>
               ))}
             </div>

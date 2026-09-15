@@ -1,8 +1,18 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
 
+import { LANG_COOKIE } from "@/lib/lang-constants";
+
 import { dictionaries, LANGS, type Dict, type Lang } from "./translations";
 
-const STORAGE_KEY = "site-lang";
+const DEFAULT_LANG: Lang = "ar";
+
+export function resolveLang(raw: string | null | undefined): Lang {
+  return raw && LANGS.some((l) => l.code === raw) ? (raw as Lang) : DEFAULT_LANG;
+}
+
+function dirFor(lang: Lang): "rtl" | "ltr" {
+  return lang === "ar" ? "rtl" : "ltr";
+}
 
 type I18nValue = {
   lang: Lang;
@@ -13,15 +23,16 @@ type I18nValue = {
 
 const I18nContext = createContext<I18nValue | null>(null);
 
-export function I18nProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Lang>("ar");
+export function I18nProvider({
+  children,
+  initialLang,
+}: {
+  children: ReactNode;
+  initialLang?: string | null;
+}) {
+  const [lang, setLangState] = useState<Lang>(resolveLang(initialLang));
 
-  useEffect(() => {
-    const stored = window.localStorage.getItem(STORAGE_KEY) as Lang | null;
-    if (stored && LANGS.some((l) => l.code === stored)) setLangState(stored);
-  }, []);
-
-  const dir = lang === "ar" ? "rtl" : "ltr";
+  const dir = dirFor(lang);
 
   useEffect(() => {
     document.documentElement.lang = lang;
@@ -30,7 +41,10 @@ export function I18nProvider({ children }: { children: ReactNode }) {
 
   const setLang = (next: Lang) => {
     setLangState(next);
-    window.localStorage.setItem(STORAGE_KEY, next);
+    // 1-year cookie so the server can render the right language on the very
+    // next request — avoids the localStorage-only flash of the wrong language
+    // between first paint and hydration.
+    document.cookie = `${LANG_COOKIE}=${next}; path=/; max-age=31536000; SameSite=Lax`;
   };
 
   return (
