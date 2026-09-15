@@ -92,8 +92,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content: "Building AI-powered SaaS platforms and multi-agent systems.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: "/favicon/android-chrome-512x512.png" },
+      { property: "og:site_name", content: "icodezone" },
+      {
+        property: "og:image",
+        content: "https://www.icodezone.codes/og-cover.png",
+      },
+      { property: "og:image:width", content: "2494" },
+      { property: "og:image:height", content: "1374" },
+      { property: "og:image:type", content: "image/png" },
       { name: "twitter:card", content: "summary_large_image" },
+      {
+        name: "twitter:image",
+        content: "https://www.icodezone.codes/og-cover.png",
+      },
     ],
     links: [
       {

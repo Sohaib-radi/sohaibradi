@@ -23,11 +23,17 @@ export const Route = createFileRoute("/")({
           "Build production-grade, multi-tenant AI platforms with async task streaming, Telegram Mini Apps, and enterprise CRM integrations.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://https://www.icodezone.codes//" },
+      { property: "og:url", content: "https://www.icodezone.codes/" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Enterprise Multi-Agent Systems" },
+      {
+        name: "twitter:description",
+        content:
+          "Build production-grade, multi-tenant AI platforms with async task streaming, Telegram Mini Apps, and enterprise CRM integrations.",
+      },
     ],
     links: [
-      { rel: "canonical", href: "https://https://www.icodezone.codes//" },
+      { rel: "canonical", href: "https://www.icodezone.codes/" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
