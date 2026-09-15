@@ -4,7 +4,7 @@ import { LANG_COOKIE } from "@/lib/lang-constants";
 
 import { dictionaries, LANGS, type Dict, type Lang } from "./translations";
 
-const DEFAULT_LANG: Lang = "ar";
+const DEFAULT_LANG: Lang = "en";
 
 export function resolveLang(raw: string | null | undefined): Lang {
   return raw && LANGS.some((l) => l.code === raw) ? (raw as Lang) : DEFAULT_LANG;
